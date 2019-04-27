@@ -1,7 +1,7 @@
 <template>
-  <span>
+  <label>
     <slot />
-  </span>
+  </label>
 </template>
 
 <script>
@@ -11,7 +11,9 @@ export default {
 </script>
 
 <style scoped>
-span {
+label {
+  padding-left: 8px;
   color: var(--light);
+  font-size: 24px;
 }
 </style>

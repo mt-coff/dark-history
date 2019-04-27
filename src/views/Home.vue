@@ -1,17 +1,32 @@
 <template>
   <div class="home">
-    <HelloWorld msg="CA 平成最後のハッカソン" />
+    <home>
+      <span slot="header">{{ header }}</span>
+      <span slot="about">{{ about }}</span>
+      <span slot="buttonLabel">{{ buttonLabel }}</span>
+    </home>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "home",
   components: {
-    HelloWorld
+    Home: () => import("@/components/Templates/HomeTemp")
+  },
+  data() {
+    return {
+      header: "黒歴史は平成とともに",
+      about: `もうすぐ平成が終わります
+あなたが生み出してきた数々の黒歴史
+全部吐き出してスッキリした状態で令和を迎えませんか？`,
+      buttonLabel: "黒歴史を告白する"
+    };
   }
 };
 </script>
+
+<style scoped>
+* {
+  text-align: center;
+}
+</style>

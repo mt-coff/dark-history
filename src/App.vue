@@ -1,20 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <logo-header></logo-header>
     <router-view />
   </div>
 </template>
 
+<script>
+export default {
+  components: {
+    LogoHeader: () => import("@/components/Molecules/LogoHeader")
+  }
+};
+</script>
+
 <style>
+:root {
+  --main-color: #c60349;
+  --accent-color: #f1d302;
+  --blue: #235789;
+  --dark: #161925;
+  --light: #fdfffc;
+}
+
+body {
+  background: var(--dark);
+  margin: 0;
+  padding: 0;
+}
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: var(--main-color);
 }
 #nav {
   padding: 30px;
@@ -22,10 +37,10 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: var(--light);
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: var(--main-color);
 }
 </style>

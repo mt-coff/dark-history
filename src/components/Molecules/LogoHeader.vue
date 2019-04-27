@@ -1,6 +1,8 @@
 <template>
   <top>
-    <logo class="logo" />
+    <div>
+      <logo class="logo" />
+    </div>
   </top>
 </template>
 
@@ -15,8 +17,14 @@ export default {
 </script>
 
 <style scoped>
+div {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
 .logo {
   width: auto;
-  height: 100%;
+  height: 70%;
 }
 </style>
