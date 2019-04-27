@@ -27,8 +27,7 @@ input {
   background: var(--light);
   border: none;
   padding: 8px;
-  font-size: 16px;
+  font-size: 24px;
   color: var(--dark);
-  outline: none;
 }
 </style>

@@ -1,7 +1,11 @@
 <template>
   <div>
     <form-label>{{ label }}</form-label>
-    <basic-textarea @input="e => $emit('input', e)" :value="value" />
+    <basic-textarea
+      @input="e => $emit('input', e)"
+      :value="value"
+      :style="{ height }"
+    />
   </div>
 </template>
 
@@ -14,7 +18,8 @@ export default {
   },
   props: {
     label: String,
-    value: String
+    value: String,
+    height: String
   }
 };
 </script>

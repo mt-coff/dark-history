@@ -11,7 +11,7 @@
       </paragraph>
     </container>
     <container class="show" style="--delay-time: 600ms">
-      <link-button to="/about" style="width: 50%;">
+      <link-button to="/post" style="width: 50%;">
         <slot name="buttonLabel" />
       </link-button>
     </container>

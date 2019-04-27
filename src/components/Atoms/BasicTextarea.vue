@@ -14,7 +14,8 @@ export default {
 <style scoped>
 textarea {
   border: none;
-  font-size: 16px;
+  font-size: 24px;
   padding: 8px;
+  resize: none;
 }
 </style>

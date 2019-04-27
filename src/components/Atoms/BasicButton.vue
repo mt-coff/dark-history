@@ -1,5 +1,5 @@
 <template>
-  <button @click="onClick" :style="style">
+  <button @click="onClick" :style="style" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -18,6 +18,10 @@ export default {
     color: {
       type: String,
       default: "light"
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -40,5 +44,9 @@ button {
   cursor: pointer;
   background: var(--bg-color);
   color: var(--text-color);
+}
+
+button:disabled {
+  background: #c8c8c8;
 }
 </style>

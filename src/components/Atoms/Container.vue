@@ -1,17 +1,17 @@
 <template>
-  <div>
+  <div :style="{ padding: `${space}px` }">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: "container"
+  name: "container",
+  props: {
+    space: {
+      type: Number,
+      default: 32
+    }
+  }
 };
 </script>
-
-<style scoped>
-div {
-  padding: 32px;
-}
-</style>
