@@ -26,6 +26,7 @@ body {
   background: var(--dark);
   margin: 0;
   padding: 0;
+  font-family: "しねきゃぷしょん", Times, serif;
 }
 
 #app {
