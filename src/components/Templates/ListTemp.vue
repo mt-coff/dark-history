@@ -5,6 +5,7 @@
       :key="index"
       class="coffin"
       :name="post.title"
+      @click="() => $emit('click', post.id)"
     />
   </container>
 </template>
