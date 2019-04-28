@@ -1,7 +1,13 @@
 <template>
-  <div class="coffin" @click="() => $emit('click')">
-    <div class="coffin-top"></div>
-    <div class="coffin-bottom"></div>
+  <div class="coffin">
+    <div class="coffin-cover" @click="() => $emit('click')">
+      <div class="coffin-top"></div>
+      <div class="coffin-bottom"></div>
+    </div>
+    <div class="coffin-body" @click="() => $emit('click')">
+      <div class="coffin-top"></div>
+      <div class="coffin-bottom"></div>
+    </div>
   </div>
 </template>
 
@@ -12,9 +18,28 @@ export default {};
 <style scoped>
 .coffin {
   position: relative;
-  display: inline-block;
 }
-.coffin::before {
+.coffin-cover {
+  position: relative;
+  display: inline-block;
+  z-index: 100;
+}
+.coffin-cover:hover {
+  animation: coffin-animation 0.5s linear 1 normal forwards;
+}
+
+@keyframes coffin-animation {
+  to {
+    transform: rotate(15deg) translateX(20px);
+  }
+}
+
+.coffin-body {
+  position: absolute;
+  display: inline-block;
+  left: 40%;
+}
+.coffin-cover::before {
   content: "";
   background-color: white;
   height: 4px;
@@ -24,7 +49,7 @@ export default {};
   top: 30%;
   left: 15%;
 }
-.coffin::after {
+.coffin-cover::after {
   content: "";
   background-color: white;
   height: 60px;
