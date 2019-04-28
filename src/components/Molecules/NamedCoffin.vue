@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <span class="coffin-name">{{ name }}</span>
-    <coffin />
+    <div class="coffin-name" @click="() => $emit('click')">{{ name }}</div>
+    <coffin class="coffin" @click="() => $emit('click')" />
   </div>
 </template>
 
@@ -19,4 +19,20 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  max-width: 300px;
+  text-align: center;
+}
+.coffin-name {
+  max-width: 300px;
+  padding-bottom: 0.5rem;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+.coffin {
+  cursor: pointer;
+}
+</style>
