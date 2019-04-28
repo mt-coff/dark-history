@@ -25,7 +25,6 @@ export default {
   display: block;
 }
 .coffin-name {
-  font-size: 0.8rem;
   max-width: 300px;
   padding-bottom: 0.5rem;
   white-space: pre-line;
