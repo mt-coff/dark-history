@@ -1,5 +1,5 @@
 <template>
-  <div class="coffin">
+  <div class="coffin" @click="() => $emit('click')">
     <div class="coffin-top"></div>
     <div class="coffin-bottom"></div>
   </div>
