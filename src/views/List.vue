@@ -1,6 +1,6 @@
 <template>
   <div>
-    <list-temp :posts="dummies" />
+    <list-temp :posts="dummies" @click="id => $router.push(`/detail/${id}`)" />
   </div>
 </template>
 
