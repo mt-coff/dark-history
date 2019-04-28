@@ -20,6 +20,7 @@ export default {
   --blue: #235789;
   --dark: #161925;
   --light: #fdfffc;
+  --twitter: #1da1f2;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
 #app {
   color: var(--main-color);
 }
+
 #nav {
   padding: 30px;
 }
