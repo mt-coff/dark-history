@@ -6,7 +6,7 @@ export interface Post {
   id: string;
   title: string;
   detail: string;
-  imageID: string;
+  imageURL: string;
   darkness: number;
   strength: number;
   createAt: Date | FirebaseFirestore.Timestamp;
@@ -17,7 +17,7 @@ export const newPost = (post: { title: string; detail?: string }): Post => {
     title: post.title,
     detail: post.detail || "",
     id: "",
-    imageID: "",
+    imageURL: "",
     darkness: 0,
     strength: 0,
     createAt: new Date()

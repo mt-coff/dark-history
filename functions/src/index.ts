@@ -8,7 +8,7 @@ const app = express();
 app.post("/item", async (req, res) => {
   const post = model.newPost(req.body);
   try {
-    post.imageID = await genImage(
+    post.imageURL = await genImage(
       "ca-dark-history.appspot.com",
       post.title,
       post.detail
