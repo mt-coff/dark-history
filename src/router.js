@@ -17,6 +17,11 @@ export default new Router({
       path: "/post",
       name: "post",
       component: () => import("./views/Post.vue")
+    },
+    {
+      path: "/list",
+      name: "list",
+      component: () => import("./views/List.vue")
     }
   ]
 });
