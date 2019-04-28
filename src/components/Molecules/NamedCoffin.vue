@@ -21,13 +21,15 @@ export default {
 
 <style scoped>
 .wrapper {
-  max-width: 300px;
   text-align: center;
+  display: block;
 }
 .coffin-name {
+  font-size: 0.8rem;
   max-width: 300px;
   padding-bottom: 0.5rem;
   white-space: pre-line;
+  word-break: keep-all;
   text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
