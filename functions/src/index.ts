@@ -4,6 +4,15 @@ import * as express from "express";
 
 const app = express();
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.post("/item", async (req, res) => {
   const post = model.newPost(req.body);
   try {
