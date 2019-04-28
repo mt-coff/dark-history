@@ -1,7 +1,7 @@
 <template>
   <top>
     <div>
-      <logo class="logo" />
+      <logo @click="() => $router.push('/')" class="logo" />
     </div>
   </top>
 </template>
@@ -26,5 +26,6 @@ div {
 .logo {
   width: auto;
   height: 70%;
+  cursor: pointer;
 }
 </style>
