@@ -73,4 +73,11 @@ export default {};
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
+
+.coffin-body > .coffin-top {
+  border-bottom-color: var(--main-color);
+}
+.coffin-body > .coffin-bottom {
+  border-top-color: var(--main-color);
+}
 </style>
