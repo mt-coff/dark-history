@@ -8,7 +8,7 @@
       <textarea-form
         label="内容"
         height="128px"
-        @input="e => $emit('update:description', e)"
+        @input="e => $emit('update:detail', e)"
       />
     </container>
     <container :space="16">
@@ -45,8 +45,16 @@ export default {
       type: String,
       required: true
     },
-    description: {
+    detail: {
       type: String,
+      required: true
+    },
+    darkness: {
+      type: Number,
+      required: true
+    },
+    strength: {
+      type: Number,
       required: true
     },
     loading: Boolean
@@ -65,6 +73,8 @@ export default {
   methods: {
     addPoint([x, y]) {
       this.point = { x, y };
+      this.$emit("update:darkness", x);
+      this.$emit("update:strength", y);
     }
   }
 };
