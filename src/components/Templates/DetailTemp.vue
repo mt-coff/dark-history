@@ -1,6 +1,6 @@
 <template>
   <container class="detail-page">
-    <basic-image :url="url"></basic-image>
+    <loading-image :url="url" size="98px" />
     <container class="under-container">
       <link-button to="/list" class="back-btn">一覧に戻る</link-button>
       <tweet-button :OGPUrl="OGPUrl"></tweet-button>
@@ -13,7 +13,7 @@
 export default {
   components: {
     LinkButton: () => import("@/components/Atoms/LinkButton"),
-    BasicImage: () => import("@/components/Atoms/BasicImage"),
+    LoadingImage: () => import("@/components/Molecules/LoadingImage"),
     Container: () => import("@/components/Atoms/Container"),
     TweetButton: () => import("@/components/Molecules/TweetButton")
   },
