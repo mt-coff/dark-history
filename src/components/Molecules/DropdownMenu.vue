@@ -62,5 +62,6 @@ a {
   vertical-align: middle;
   text-align: center;
   line-height: middle;
+  color: var(--main-color);
 }
 </style>
