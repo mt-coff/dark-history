@@ -9,6 +9,9 @@ export default {
   name: "detail",
   components: {
     DetailTemp: () => import("@/components/Templates/DetailTemp")
+  },
+  methods: {
+    getItem() {}
   }
 };
 </script>
