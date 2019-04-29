@@ -1,7 +1,7 @@
 import genImage from "./genImage";
 import { putImage, updateItem } from "./firebase";
 
-const base = "https://us-central1-ca-dark-history.cloudfunctions.net/api";
+const base = "https://us-central1-ca-dark-history.cloudfunctions.net";
 
 export const postItem = async post => {
   const tmp = require("!svg-inline-loader!@/assets/Template.svg");
@@ -9,7 +9,7 @@ export const postItem = async post => {
   svg.innerHTML = tmp;
   // データのポスト & 画像の生成
   const [{ message }, blob] = await Promise.all([
-    fetch(`${base}/item`, {
+    fetch(`${base}/api/item`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(post)
@@ -25,11 +25,11 @@ export const postItem = async post => {
 };
 
 export const getItem = id => {
-  return fetch(`${base}/item/${id}`);
+  return fetch(`${base}/item/api/${id}`);
 };
 
 export const getAllItem = () => {
-  return fetch(`${base}/items`);
+  return fetch(`${base}/api/items`);
 };
 
 export const genOGPUrl = id => {
