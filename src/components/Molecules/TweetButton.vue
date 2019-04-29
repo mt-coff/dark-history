@@ -19,13 +19,12 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 96px;
-  padding: 0 5px;
+  padding: 4px 16px;
   background-color: var(--twitter);
   font-family: sans-serif;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 .twitter-logo {
