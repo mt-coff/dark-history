@@ -10,9 +10,6 @@
         <slot name="about" />
       </paragraph>
     </container>
-    <container class="show" style="--delay-time: 600ms" :space="24">
-      <graph :points="items"></graph>
-    </container>
     <container class="show" style="--delay-time: 600ms">
       <link-button
         to="/post"
@@ -20,6 +17,9 @@
       >
         <slot name="buttonLabel" />
       </link-button>
+    </container>
+    <container class="show" style="--delay-time: 800ms" :space="24">
+      <graph :points="items" info="黒歴史たち" />
     </container>
   </container>
 </template>

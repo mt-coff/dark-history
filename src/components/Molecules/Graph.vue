@@ -1,19 +1,22 @@
 <template>
   <div class="wrap">
-    <matrix ref="svg">
-      <point
-        v-for="(p, i) in points"
-        :key="'point' + i"
-        :center="calcPos(p)"
-        :radius="8"
-        class="point"
-        @mouseover="e => overPoint(e, p)"
-        @mouseleave="e => leavePoint(e)"
-      ></point>
-    </matrix>
-    <speech-bubble v-if="selected" :style="bubblePos">
-      {{ selected.title }}
-    </speech-bubble>
+    <form-label>{{ info }}</form-label>
+    <div>
+      <matrix ref="svg">
+        <point
+          v-for="(p, i) in points"
+          :key="'point' + i"
+          :center="calcPos(p)"
+          :radius="8"
+          class="point"
+          @mouseover="e => overPoint(e, p)"
+          @mouseleave="e => leavePoint(e)"
+        ></point>
+      </matrix>
+    </div>
+    <speech-bubble v-if="selected" :style="bubblePos">{{
+      selected.title
+    }}</speech-bubble>
   </div>
 </template>
 
@@ -24,7 +27,8 @@ export default {
   components: {
     Matrix: () => import("@/components/Atoms/Matrix"),
     Point: () => import("@/components/Atoms/Point"),
-    SpeechBubble: () => import("@/components/Atoms/SpeechBubble")
+    SpeechBubble: () => import("@/components/Atoms/SpeechBubble"),
+    FormLabel: () => import("@/components/Atoms/FormLabel")
   },
   props: {
     points: {
@@ -38,6 +42,10 @@ export default {
     height: {
       type: Number,
       default: 320
+    },
+    info: {
+      type: String,
+      default: ""
     }
   },
   data() {
@@ -90,6 +98,8 @@ export default {
 <style scoped>
 .wrap {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .bubble {
