@@ -15,7 +15,7 @@ export default {};
 <style scoped>
 .dropdown {
   position: absolute;
-  right: 20px;
+  right: 10px;
 }
 .menu-title {
   font-size: 1.5rem;
@@ -39,24 +39,28 @@ ul {
   position: absolute;
   padding: 0;
   margin: 0;
-  top: 120%;
+  top: 101%;
   right: 0;
   width: auto;
   list-style-type: none;
   transition: all 0.2s ease;
   visibility: hidden;
   opacity: 0;
-  z-index: 10;
+  z-index: 1000;
+  background-color: var(--dark);
 }
 li {
-  margin-bottom: 1rem;
+  padding: 0.5rem 0.25rem;
   font-size: 1.5rem;
   width: 100%;
+  border: 1px solid var(--light);
 }
 a {
   display: inline-block;
   word-break: keep-all;
   width: 100%;
-  text-align: right;
+  vertical-align: middle;
+  text-align: center;
+  line-height: middle;
 }
 </style>
