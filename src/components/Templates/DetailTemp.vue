@@ -3,7 +3,7 @@
     <basic-image :url="url"></basic-image>
     <container class="under-container">
       <link-button to="/list" class="back-btn">一覧に戻る</link-button>
-      <tweet-button></tweet-button>
+      <tweet-button :OGPUrl="OGPUrl"></tweet-button>
       <div class="dummy"></div>
     </container>
   </container>
@@ -21,6 +21,10 @@ export default {
     url: {
       type: String,
       default: "https://bulma.io/images/placeholders/256x256.png"
+    },
+    OGPUrl: {
+      type: String,
+      default: ""
     }
   }
 };

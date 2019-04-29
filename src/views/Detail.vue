@@ -1,11 +1,11 @@
 <template>
   <div class="detail">
-    <detail-temp :url="image.imageURL"></detail-temp>
+    <detail-temp :url="image.imageURL" :OGPUrl="OGPUrl"></detail-temp>
   </div>
 </template>
 
 <script>
-import { getItem } from "../js/api";
+import { getItem, genOGPUrl } from "../js/api";
 
 export default {
   name: "detail",
@@ -22,7 +22,8 @@ export default {
         createAt: 0,
         imageURL: "",
         strength: 0
-      }
+      },
+      OGPUrl: ""
     };
   },
   created() {
@@ -30,6 +31,8 @@ export default {
       .then(response => response.json())
       .then(json => (this.image = json))
       .catch(error => console.error(error));
+
+    this.OGPUrl = genOGPUrl(this.$route.params.id);
   }
 };
 </script>

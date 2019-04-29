@@ -2,16 +2,28 @@
   <div class="twitter">
     <img src="@/assets/Twitter_Logo_WhiteOnBlue.svg" class="twitter-logo" />
     <a
-      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+      :href="
+        `https://twitter.com/share?url=${OGPUrl}&hashtags=平成最後のハッカソン,dark_historys&lang=ja`
+      "
       class="twitter-share-button"
       data-show-count="false"
+      target="_blank"
       >Tweet</a
     >
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    OGPUrl: String
+  },
+  data() {
+    return {
+      tags: "dark_historys"
+    };
+  }
+};
 </script>
 
 <style>
