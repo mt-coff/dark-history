@@ -1,11 +1,11 @@
 <template>
   <container>
-    <container class="show" style="--delay-time: 200ms">
+    <container class="show" style="--delay-time: 200ms" :space="24">
       <heading :level="1">
         <slot name="header" />
       </heading>
     </container>
-    <container class="show" style="--delay-time: 400ms">
+    <container class="show" style="--delay-time: 400ms" :space="24">
       <paragraph style="font-size: 24px;">
         <slot name="about" />
       </paragraph>
@@ -13,7 +13,7 @@
     <container class="show" style="--delay-time: 600ms">
       <link-button
         to="/post"
-        style="width: 50%; font-size: 24px; padding: 16px;"
+        style="min-width: 50%; font-size: 24px; padding: 16px;"
       >
         <slot name="buttonLabel" />
       </link-button>
