@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 label {
-  padding-left: 8px;
+  padding-bottom: 0.5rem;
   color: var(--light);
   font-size: 24px;
 }
