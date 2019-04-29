@@ -1,5 +1,5 @@
 <template>
-  <img :src="url" />
+  <img :src="url" @load="e => $emit('load', e)" />
 </template>
 
 <script>

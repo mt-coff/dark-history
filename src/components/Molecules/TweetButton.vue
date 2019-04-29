@@ -2,16 +2,28 @@
   <div class="twitter">
     <img src="@/assets/Twitter_Logo_WhiteOnBlue.svg" class="twitter-logo" />
     <a
-      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+      :href="
+        `https://twitter.com/share?url=${OGPUrl}&hashtags=平成最後のハッカソン,dark_historys&lang=ja`
+      "
       class="twitter-share-button"
       data-show-count="false"
+      target="_blank"
       >Tweet</a
     >
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    OGPUrl: String
+  },
+  data() {
+    return {
+      tags: "dark_historys"
+    };
+  }
+};
 </script>
 
 <style>
@@ -19,13 +31,12 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 96px;
-  padding: 0 5px;
+  padding: 4px 16px;
   background-color: var(--twitter);
   font-family: sans-serif;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 .twitter-logo {
