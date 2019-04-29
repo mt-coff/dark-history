@@ -10,7 +10,10 @@
         <point
           v-for="{ x, y } in points"
           :key="x + y"
-          :center="{ x: x + width / 2, y: height / 2 - y }"
+          :center="{
+            x: (x * width) / 2 + width / 2,
+            y: height / 2 - (y * height) / 2
+          }"
           :radius="8"
           class="point"
         />

@@ -6,9 +6,7 @@
       :width="width"
       :height="height"
       class="base"
-      @click="
-        e => $emit('click', [e.offsetX - width / 2, height / 2 - e.offsetY])
-      "
+      @click="clickMatrix"
     ></rect>
     <line
       :x1="width / 2"
@@ -40,6 +38,15 @@ export default {
     height: {
       type: Number,
       default: 320
+    }
+  },
+  methods: {
+    clickMatrix(e) {
+      const halfWidth = this.width / 2;
+      const halfHeight = this.height / 2;
+      const x = e.offsetX - halfWidth;
+      const y = halfHeight - e.offsetY;
+      this.$emit("click", [x / halfWidth, y / halfHeight]);
     }
   }
 };
