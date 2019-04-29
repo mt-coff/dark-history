@@ -1,0 +1,55 @@
+<template>
+  <div class="dropdown">
+    <p class="menu-title">Menu</p>
+    <ul>
+      <li><router-link to="/post">黒歴史を打ち明ける</router-link></li>
+      <li><router-link to="/list">黒歴史一覧</router-link></li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+.dropdown {
+  position: absolute;
+  right: 20px;
+}
+.menu-title {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.menu-title::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 0.5rem;
+  border-top: solid 2px var(--main-color);
+  border-right: solid 2px var(--main-color);
+  transform: rotate(135deg);
+}
+.dropdown:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+ul {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 100%;
+  list-style-type: none;
+  transition: all 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+}
+li {
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1.5rem;
+  width: 100px;
+}
+</style>

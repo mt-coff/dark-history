@@ -2,6 +2,7 @@
   <top>
     <div>
       <logo @click="() => $router.push('/')" class="logo" />
+      <dropdown-menu />
     </div>
   </top>
 </template>
@@ -9,10 +10,11 @@
 <script>
 import Top from "@/components/Atoms/Top";
 import Logo from "@/components/Atoms/Logo";
+import DropdownMenu from "@/components/Molecules/DropdownMenu";
 
 export default {
   name: "logo-header",
-  components: { Top, Logo }
+  components: { Top, Logo, DropdownMenu }
 };
 </script>
 
@@ -22,6 +24,7 @@ div {
   height: 100%;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .logo {
   width: auto;
