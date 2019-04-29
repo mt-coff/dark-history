@@ -20,8 +20,9 @@ export const postItem = async post => {
   const imageURL = await putImage(blob, `${message}.png`).then(x =>
     x.ref.getDownloadURL()
   );
+  await updateItem(message, { imageURL });
 
-  return updateItem(message, { imageURL });
+  return message;
 };
 
 export const getItem = id => {
