@@ -39,7 +39,9 @@ ul {
   position: absolute;
   padding: 0;
   margin: 0;
-  top: 100%;
+  top: 120%;
+  right: 0;
+  width: auto;
   list-style-type: none;
   transition: all 0.2s ease;
   visibility: hidden;
@@ -47,9 +49,14 @@ ul {
   z-index: 10;
 }
 li {
-  margin-bottom: 0.5rem;
-  display: block;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
-  width: 100px;
+  width: 100%;
+}
+a {
+  display: inline-block;
+  word-break: keep-all;
+  width: 100%;
+  text-align: right;
 }
 </style>
