@@ -17,5 +17,6 @@ textarea {
   font-size: 24px;
   padding: 8px;
   resize: none;
+  border-radius: 8px;
 }
 </style>
