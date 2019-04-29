@@ -1,10 +1,10 @@
 <template>
-  <div class="coffin">
-    <div class="coffin-cover" @click="() => $emit('click')">
+  <div class="coffin" @click="() => $emit('click')">
+    <div class="coffin-cover">
       <div class="coffin-top"></div>
       <div class="coffin-bottom"></div>
     </div>
-    <div class="coffin-body" @click="() => $emit('click')">
+    <div class="coffin-body">
       <div class="coffin-top"></div>
       <div class="coffin-bottom"></div>
     </div>
