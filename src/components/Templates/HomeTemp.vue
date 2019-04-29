@@ -11,7 +11,9 @@
       </paragraph>
     </container>
     <container class="show" style="--delay-time: 600ms" :space="24">
-      <graph :points="[{ x: 100, y: 100 }]"></graph>
+      <graph
+        :points="[{ darkness: -0.5, strength: 0.5, title: 'Test' }]"
+      ></graph>
     </container>
     <container class="show" style="--delay-time: 600ms">
       <link-button
