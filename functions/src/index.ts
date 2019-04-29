@@ -1,18 +1,21 @@
 import * as functions from "firebase-functions";
 import * as model from "./model";
 import * as express from "express";
-import genImage from "./genImage";
 
 const app = express();
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 app.post("/item", async (req, res) => {
   const post = model.newPost(req.body);
   try {
-    post.imageURL = await genImage(
-      "ca-dark-history.appspot.com",
-      post.title,
-      post.detail
-    );
     const id = await model.postData(post);
     res.status(200).json({ message: id });
   } catch (e) {
