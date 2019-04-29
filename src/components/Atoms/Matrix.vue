@@ -1,8 +1,10 @@
 <template>
-  <svg :width="`${width}px`" :height="`${height}px`">
+  <svg :width="`${width}px`" :height="`${height}px`" class="matrix">
     <rect
       x="0"
       y="0"
+      rx="8"
+      ry="8"
       :width="width"
       :height="height"
       class="base"

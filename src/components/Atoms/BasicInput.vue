@@ -29,5 +29,6 @@ input {
   padding: 8px;
   font-size: 24px;
   color: var(--dark);
+  border-radius: 8px;
 }
 </style>
