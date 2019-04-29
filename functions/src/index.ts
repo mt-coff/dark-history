@@ -54,4 +54,18 @@ app.get("/items", async (req, res) => {
   }
 });
 
+const view = express();
+view.set("view engine", "esj");
+
+view.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const { imageURL } = await model.getPost(id);
+    res.status(200).render("./ogp.ejs", { imageURL, id });
+  } catch (e) {
+    res.status(404).render("./notfount.ejs");
+  }
+});
+
 export const api = functions.https.onRequest(app);
+export const ogp = functions.https.onRequest(view);
