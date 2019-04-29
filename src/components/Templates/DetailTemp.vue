@@ -37,6 +37,11 @@ export default {
   border: 1px solid var(--main-color);
 }
 
+.back-btn:hover {
+  background: var(--main-color);
+  color: var(--light);
+}
+
 .detail-page {
   width: 800px;
   display: flex;
