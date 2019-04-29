@@ -23,17 +23,11 @@ export default {};
   position: relative;
   display: inline-block;
   z-index: 100;
+  transition: all 1s ease;
 }
 .coffin:hover > .coffin-cover {
-  animation: coffin-animation 0.5s linear 1 normal forwards;
+  transform: rotate(15deg) translateX(20px);
 }
-
-@keyframes coffin-animation {
-  to {
-    transform: rotate(15deg) translateX(20px);
-  }
-}
-
 .coffin-body {
   position: absolute;
   display: inline-block;
