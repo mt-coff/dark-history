@@ -8,7 +8,7 @@
       <textarea-form
         label="内容"
         height="128px"
-        @input="e => $emit('update:description', e)"
+        @input="e => $emit('update:detail', e)"
       />
     </container>
     <container :space="16">
@@ -45,7 +45,7 @@ export default {
       type: String,
       required: true
     },
-    description: {
+    detail: {
       type: String,
       required: true
     },

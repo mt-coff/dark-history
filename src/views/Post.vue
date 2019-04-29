@@ -18,7 +18,7 @@ export default {
     return {
       form: {
         title: "",
-        description: ""
+        detail: ""
       },
       loading: false
     };
