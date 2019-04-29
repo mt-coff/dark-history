@@ -49,6 +49,14 @@ export default {
       type: String,
       required: true
     },
+    darkness: {
+      type: Number,
+      required: true
+    },
+    strength: {
+      type: Number,
+      required: true
+    },
     loading: Boolean
   },
   data() {
@@ -65,6 +73,8 @@ export default {
   methods: {
     addPoint([x, y]) {
       this.point = { x, y };
+      this.$emit("update:darkness", x);
+      this.$emit("update:strength", y);
     }
   }
 };
