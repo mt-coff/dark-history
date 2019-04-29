@@ -15,6 +15,6 @@ export default {
 <style scoped>
 div {
   padding: 0;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 </style>
