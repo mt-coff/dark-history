@@ -12,14 +12,16 @@ export interface Post {
   createAt: Date | FirebaseFirestore.Timestamp;
 }
 
-export const newPost = (post: { title: string; detail?: string }): Post => {
+export const newPost = (post: {
+  title: string;
+  detail: string;
+  darkness: number;
+  strength: number;
+}): Post => {
   return {
-    title: post.title,
-    detail: post.detail || "",
+    ...post,
     id: "",
     imageURL: "",
-    darkness: 0,
-    strength: 0,
     createAt: new Date()
   };
 };
