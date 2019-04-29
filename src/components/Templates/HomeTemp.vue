@@ -10,6 +10,9 @@
         <slot name="about" />
       </paragraph>
     </container>
+    <container class="show" style="--delay-time: 600ms" :space="24">
+      <graph :points="[{ x: 100, y: 100 }]"></graph>
+    </container>
     <container class="show" style="--delay-time: 600ms">
       <link-button
         to="/post"
@@ -27,7 +30,8 @@ export default {
     Container: () => import("@/components/Atoms/Container"),
     Heading: () => import("@/components/Atoms/Heading"),
     Paragraph: () => import("@/components/Atoms/Paragraph"),
-    LinkButton: () => import("@/components/Atoms/LinkButton")
+    LinkButton: () => import("@/components/Atoms/LinkButton"),
+    Graph: () => import("@/components/Molecules/Graph")
   }
 };
 </script>
