@@ -26,7 +26,7 @@ export const postItem = async post => {
 };
 
 export const getItem = id => {
-  return fetch(`${base}/item/api/${id}`);
+  return fetch(`${base}/api/item/${id}`);
 };
 
 export const getAllItem = () => {
