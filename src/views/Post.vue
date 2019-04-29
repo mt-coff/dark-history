@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { postItem } from "../js/api.js";
+
 export default {
   name: "post",
   components: {
@@ -26,9 +28,23 @@ export default {
     };
   },
   methods: {
-    postData() {
+    async postData() {
+      if (!this.form.title) {
+        alert("黒歴史のタイトルを入力してください");
+        return;
+      }
+      if (!this.form.detail) {
+        alert("黒歴史の内容を入力してください");
+        return;
+      }
+      if (!this.form.strength || !this.form.darkness) {
+        alert("黒歴史のタイプをグラフにプロットしてください");
+        return;
+      }
       this.loading = true;
-      console.log(this.form);
+      const res = await postItem(this.form);
+      this.loading = false;
+      this.$router.push(`/detail/${res}`);
     }
   }
 };
