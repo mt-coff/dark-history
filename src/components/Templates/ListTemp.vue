@@ -7,6 +7,11 @@
       :name="post.title"
       @click="() => $emit('click', post.id)"
     />
+    <div
+      v-for="(post, index) in posts"
+      :key="`dummy${index}`"
+      class="dummy"
+    ></div>
   </container>
 </template>
 
@@ -32,11 +37,16 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .coffin {
   min-width: 0;
   width: 300px;
   margin: 1rem;
+}
+.dummy {
+  height: 0px;
+  margin: 0 1rem;
+  width: 300px;
 }
 </style>
