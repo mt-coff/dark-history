@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <basic-image :url="url" @load="() => (isLoading = false)" />
+    <basic-image class="image" :url="url" @load="() => (isLoading = false)" />
     <loading v-if="isLoading" class="loading" :size="size" />
   </div>
 </template>
@@ -32,8 +32,8 @@ export default {
 <style scoped>
 .wrap {
   position: relative;
-  width: 800px;
-  height: 540px;
+  height: auto;
+  max-width: 100%;
   background: #aaa;
   border-radius: 16px;
 }
@@ -45,5 +45,9 @@ export default {
   right: 0;
   bottom: 0;
   margin: auto;
+}
+.image {
+  height: auto;
+  max-width: 100%;
 }
 </style>
