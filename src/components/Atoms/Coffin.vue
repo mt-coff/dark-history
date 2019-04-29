@@ -24,7 +24,7 @@ export default {};
   display: inline-block;
   z-index: 100;
 }
-.coffin-cover:hover {
+.coffin:hover > .coffin-cover {
   animation: coffin-animation 0.5s linear 1 normal forwards;
 }
 
