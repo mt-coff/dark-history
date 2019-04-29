@@ -11,12 +11,13 @@ export default {};
 <style scoped>
 .bubble {
   position: relative;
-  padding: 4px 16px;
-  border-radius: 16px;
+  padding: 8px 32px;
+  border-radius: 32px;
   background: var(--dark);
   color: var(--light);
   border: 1px solid var(--light);
   box-sizing: border-box;
+  transform: translate3d(-50%, calc(-50% - 35px), 0);
 }
 
 .bubble::before {

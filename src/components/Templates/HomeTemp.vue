@@ -11,9 +11,7 @@
       </paragraph>
     </container>
     <container class="show" style="--delay-time: 600ms" :space="24">
-      <graph
-        :points="[{ darkness: -0.5, strength: 0.5, title: 'Test' }]"
-      ></graph>
+      <graph :points="items"></graph>
     </container>
     <container class="show" style="--delay-time: 600ms">
       <link-button
@@ -34,6 +32,12 @@ export default {
     Paragraph: () => import("@/components/Atoms/Paragraph"),
     LinkButton: () => import("@/components/Atoms/LinkButton"),
     Graph: () => import("@/components/Molecules/Graph")
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    }
   }
 };
 </script>

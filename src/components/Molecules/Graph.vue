@@ -6,13 +6,14 @@
         :key="'point' + i"
         :center="calcPos(p)"
         :radius="8"
+        class="point"
         @mouseover="e => overPoint(e, p)"
         @mouseleave="e => leavePoint(e)"
       ></point>
     </matrix>
-    <speech-bubble v-if="selected" :style="bubblePos">{{
-      selected.title
-    }}</speech-bubble>
+    <speech-bubble v-if="selected" :style="bubblePos">
+      {{ selected.title }}
+    </speech-bubble>
   </div>
 </template>
 
@@ -41,8 +42,7 @@ export default {
   },
   data() {
     return {
-      selected: null,
-      rootPos: null
+      selected: null
     };
   },
   computed: {
@@ -54,14 +54,15 @@ export default {
           this.height
         );
 
+        const rootPos = this.$el.getBoundingClientRect();
         const svgPos = this.$refs.svg.$el.getBoundingClientRect();
         const offset = {
-          x: svgPos.x - this.rootPos.x,
-          y: svgPos.y - this.rootPos.y
+          x: svgPos.x - rootPos.x,
+          y: svgPos.y - rootPos.y
         };
         return {
-          top: `${x + offset.x}px`,
-          left: `${y + offset.y}px`
+          top: `${y + offset.y}px`,
+          left: `${x + offset.x}px`
         };
       }
       return { top: "0px", left: "0px" };
@@ -72,7 +73,7 @@ export default {
       this.selected = p;
     },
     leavePoint() {
-      // this.selected = null;
+      this.selected = null;
     },
     calcPos(p) {
       const [x, y] = invPosFunc(
@@ -82,10 +83,6 @@ export default {
       );
       return { x, y };
     }
-  },
-  mounted() {
-    const { x, y } = this.$el.getBoundingClientRect();
-    this.rootPos = { x, y };
   }
 };
 </script>
@@ -97,5 +94,27 @@ export default {
 
 .bubble {
   position: absolute !important;
+}
+
+.point {
+  fill: var(--main-color);
+}
+
+.point:hover {
+  animation: shown 0.25s ease;
+}
+
+@keyframes shown {
+  0% {
+    r: 8;
+  }
+
+  50% {
+    r: 12;
+  }
+
+  100% {
+    r: 8;
+  }
 }
 </style>
