@@ -1,5 +1,5 @@
 <template>
-  <img src="@/assets/Logo.svg" />
+  <img @click="() => $emit('click')" src="@/assets/Logo.svg" />
 </template>
 
 <script>
