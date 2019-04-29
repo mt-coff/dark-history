@@ -43,7 +43,6 @@ export default {
 }
 
 .detail-page {
-  width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
