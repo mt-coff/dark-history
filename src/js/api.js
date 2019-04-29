@@ -31,3 +31,7 @@ export const getItem = id => {
 export const getAllItem = () => {
   return fetch(`${base}/items`);
 };
+
+export const genOGPUrl = id => {
+  return `${base}/ogp/${id}`;
+};
