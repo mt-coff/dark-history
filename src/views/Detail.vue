@@ -35,7 +35,6 @@ export default {
       .then(response => response.json())
       .then(json => (this.image = json))
       .catch(error => console.error(error));
-    console.log(this.image);
     this.OGPUrl = genOGPUrl(this.$route.params.id);
   }
 };
