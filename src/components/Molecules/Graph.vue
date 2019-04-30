@@ -11,12 +11,13 @@
           class="point"
           @mouseover="e => overPoint(e, p)"
           @mouseleave="e => leavePoint(e)"
+          @click="() => $router.push(`/detail/${p.id}`)"
         ></point>
       </matrix>
     </div>
-    <speech-bubble v-if="selected" :style="bubblePos">{{
-      selected.title
-    }}</speech-bubble>
+    <speech-bubble v-if="selected" :style="bubblePos">
+      {{ selected.title }}
+    </speech-bubble>
   </div>
 </template>
 
@@ -108,6 +109,7 @@ export default {
 
 .point {
   fill: var(--main-color);
+  cursor: pointer;
 }
 
 .point:hover {

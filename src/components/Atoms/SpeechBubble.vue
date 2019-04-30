@@ -17,7 +17,7 @@ export default {};
   color: var(--light);
   border: 1px solid var(--light);
   box-sizing: border-box;
-  transform: translate3d(-50%, calc(-50% - 35px), 0);
+  transform: translate3d(-50%, calc(-50% - 40px), 0);
 }
 
 .bubble::before {
