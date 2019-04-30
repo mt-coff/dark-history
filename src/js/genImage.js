@@ -2,21 +2,31 @@ import * as d3 from "d3";
 
 const genSvg = (tmp, title, description) => {
   const body = d3.select(tmp);
-  const width = Number(tmp.children[0].getAttribute("width"));
+
   body
-    .append("text")
-    .attr("x", (width - title.length * 32) / 2)
-    .attr("y", 135)
+    .append("foreignObject")
+    .attr("x", 100)
+    .attr("y", 40)
     .attr("fill", "#161925")
     .attr("font-size", 32)
     .attr("font-weight", "bold")
+    .attr("width", 600)
+    .attr("height", 180)
+    .append("xhtml:div")
+    .append("p")
+    .attr("style", "text-align: center;")
     .html(title);
   body
-    .append("text")
-    .attr("x", (width - description.length * 32) / 2)
-    .attr("y", 270)
+    .append("foreignObject")
+    .attr("x", 100)
+    .attr("y", 100)
     .attr("fill", "#161925")
-    .attr("font-size", 32)
+    .attr("font-size", 24)
+    .attr("width", 600)
+    .attr("height", 500)
+    .attr("style", "word-break: break-all; white-space: pre-line;")
+    .append("xhtml:div")
+    .append("p")
     .html(description);
 
   return tmp;
