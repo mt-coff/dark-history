@@ -32,8 +32,8 @@ export default {
 <style scoped>
 .wrap {
   position: relative;
-  height: auto;
-  max-width: 100%;
+  min-height: 240px;
+  min-width: 300px;
   background: #aaa;
   border-radius: 16px;
 }
