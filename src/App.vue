@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <logo-header></logo-header>
-    <router-view />
+    <router-view class="main" />
   </div>
 </template>
 
@@ -45,5 +45,8 @@ body {
 
 #nav a.router-link-exact-active {
   color: var(--main-color);
+}
+.main {
+  overflow: scroll;
 }
 </style>
