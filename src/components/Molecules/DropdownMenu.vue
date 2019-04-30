@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown">
+  <div class="dropdown" ontouchstart="">
     <p class="menu-title">Menu</p>
     <ul>
       <li><router-link to="/post">黒歴史を打ち明ける</router-link></li>

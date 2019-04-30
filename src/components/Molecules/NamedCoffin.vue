@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :style="css">
+  <div class="wrapper" :style="css" ontouchstart="">
     <div class="coffin-name" @click="() => $emit('click')">{{ name }}</div>
     <coffin class="coffin" @click="() => $emit('click')" />
   </div>
