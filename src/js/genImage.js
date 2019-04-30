@@ -6,17 +6,22 @@ const genSvg = (tmp, title, description) => {
   body
     .append("text")
     .attr("x", (width - title.length * 32) / 2)
-    .attr("y", 135)
+    .attr("y", 80)
     .attr("fill", "#161925")
     .attr("font-size", 32)
     .attr("font-weight", "bold")
     .html(title);
   body
-    .append("text")
-    .attr("x", (width - description.length * 32) / 2)
-    .attr("y", 270)
+    .append("foreignObject")
+    .attr("x", 100)
+    .attr("y", 100)
     .attr("fill", "#161925")
     .attr("font-size", 32)
+    .attr("width", 600)
+    .attr("height", 500)
+    .attr("style", "word-break: break-all; white-space: pre-line;")
+    .append("xhtml:div")
+    .append("p")
     .html(description);
 
   return tmp;
