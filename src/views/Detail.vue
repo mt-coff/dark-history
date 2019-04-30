@@ -1,6 +1,10 @@
 <template>
   <div class="detail">
-    <detail-temp :url="image.imageURL" :OGPUrl="OGPUrl"></detail-temp>
+    <detail-temp
+      :url="image.imageURL"
+      :OGPUrl="OGPUrl"
+      :title="image.title"
+    ></detail-temp>
   </div>
 </template>
 
@@ -31,7 +35,6 @@ export default {
       .then(response => response.json())
       .then(json => (this.image = json))
       .catch(error => console.error(error));
-
     this.OGPUrl = genOGPUrl(this.$route.params.id);
   }
 };
