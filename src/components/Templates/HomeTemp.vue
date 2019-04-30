@@ -19,7 +19,7 @@
       </link-button>
     </container>
     <container class="show" style="--delay-time: 800ms" :space="24">
-      <graph :points="items" :label="label" info="黒歴史たち" />
+      <graph :points="items" :label="label" info="†黒歴史たち†" />
     </container>
   </container>
 </template>
