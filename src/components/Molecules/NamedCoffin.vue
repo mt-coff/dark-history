@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :style="css">
     <div class="coffin-name" @click="() => $emit('click')">{{ name }}</div>
     <coffin class="coffin" @click="() => $emit('click')" />
   </div>
@@ -14,7 +14,8 @@ export default {
     name: {
       required: true,
       type: String
-    }
+    },
+    css: String
   }
 };
 </script>

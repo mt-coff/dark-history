@@ -47,6 +47,7 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  animation: fade 1s ease;
 }
 
 .under-container {
@@ -58,5 +59,15 @@ export default {
 .dummy {
   width: 128px;
   height: 0;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 </style>
