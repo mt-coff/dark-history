@@ -16,7 +16,7 @@ const genSvg = (tmp, title, description) => {
     .attr("x", 100)
     .attr("y", 100)
     .attr("fill", "#161925")
-    .attr("font-size", 32)
+    .attr("font-size", 24)
     .attr("width", 600)
     .attr("height", 500)
     .attr("style", "word-break: break-all; white-space: pre-line;")
