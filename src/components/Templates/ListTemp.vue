@@ -6,6 +6,7 @@
       class="coffin"
       :name="post.title"
       @click="() => $emit('click', post.id)"
+      :style="{ '--delay-time': `${50 * index}ms` }"
     />
     <div
       v-for="(post, index) in posts"
@@ -43,10 +44,22 @@ export default {
   min-width: 0;
   width: 300px;
   margin: 1rem;
+  opacity: 0;
+  animation: fade 1s ease var(--delay-time) normal forwards;
 }
 .dummy {
   height: 0px;
   margin: 0 1rem;
   width: 300px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 </style>
