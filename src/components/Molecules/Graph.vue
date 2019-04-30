@@ -1,7 +1,11 @@
 <template>
   <div class="wrap">
     <form-label>{{ info }}</form-label>
-    <div>
+    <div class="plot" :style="{ width: `${width}px`, height: `${height}px` }">
+      <span class="top">{{ label.top }}</span>
+      <span class="bottom">{{ label.bottom }}</span>
+      <span class="left">{{ label.left }}</span>
+      <span class="right">{{ label.right }}</span>
       <matrix ref="svg">
         <point
           v-for="(p, i) in points"
@@ -15,9 +19,9 @@
         ></point>
       </matrix>
     </div>
-    <speech-bubble v-if="selected" :style="bubblePos">
-      {{ selected.title }}
-    </speech-bubble>
+    <speech-bubble v-if="selected" :style="bubblePos">{{
+      selected.title
+    }}</speech-bubble>
   </div>
 </template>
 
@@ -47,6 +51,10 @@ export default {
     info: {
       type: String,
       default: ""
+    },
+    label: {
+      type: Object,
+      required: true
     }
   },
   data() {
@@ -114,6 +122,41 @@ export default {
 
 .point:hover {
   animation: shown 0.25s ease;
+}
+
+.plot {
+  position: relative;
+  padding: 32px;
+  margin: 16px auto 0;
+}
+
+.plot > span {
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  width: 128px;
+  height: 32px;
+  color: var(--light);
+}
+
+.top {
+  top: -4px;
+  left: calc(50% - 64px);
+}
+
+.bottom {
+  bottom: -4px;
+  left: calc(50% - 64px);
+}
+
+.left {
+  top: calc(50% - 16px);
+  left: -98px;
+}
+
+.right {
+  top: calc(50% - 16px);
+  right: -98px;
 }
 
 @keyframes shown {
