@@ -18,6 +18,9 @@
         <slot name="buttonLabel" />
       </link-button>
     </container>
+    <container class="show" style="--delay-time: 800ms" :space="24">
+      <graph :points="items" info="黒歴史たち" />
+    </container>
   </container>
 </template>
 
@@ -27,7 +30,14 @@ export default {
     Container: () => import("@/components/Atoms/Container"),
     Heading: () => import("@/components/Atoms/Heading"),
     Paragraph: () => import("@/components/Atoms/Paragraph"),
-    LinkButton: () => import("@/components/Atoms/LinkButton")
+    LinkButton: () => import("@/components/Atoms/LinkButton"),
+    Graph: () => import("@/components/Molecules/Graph")
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    }
   }
 };
 </script>

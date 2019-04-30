@@ -1,5 +1,12 @@
 <template>
-  <circle :cx="center.x" :cy="center.y" :r="radius" />
+  <circle
+    :cx="center.x"
+    :cy="center.y"
+    :r="radius"
+    @mouseover="e => $emit('mouseover', e)"
+    @mouseleave="e => $emit('mouseleave', e)"
+    @click="e => $emit('click')"
+  />
 </template>
 
 <script>

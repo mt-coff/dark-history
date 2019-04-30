@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import { posFunc } from "@/js/matrix";
+
 export default {
   props: {
     width: {
@@ -44,11 +46,10 @@ export default {
   },
   methods: {
     clickMatrix(e) {
-      const halfWidth = this.width / 2;
-      const halfHeight = this.height / 2;
-      const x = e.offsetX - halfWidth;
-      const y = halfHeight - e.offsetY;
-      this.$emit("click", [x / halfWidth, y / halfHeight]);
+      this.$emit(
+        "click",
+        posFunc({ x: e.offsetX, y: e.offsetY }, this.width, this.height)
+      );
     }
   }
 };
