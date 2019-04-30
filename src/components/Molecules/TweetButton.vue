@@ -1,7 +1,9 @@
 <template>
   <a
     :href="
-      `https://twitter.com/share?url=${OGPUrl}&hashtags=平成最後のハッカソン,dark_historys&lang=ja`
+      `https://twitter.com/share?url=${OGPUrl}&text=${encodeURI(
+        title + '\n'
+      )}&hashtags=平成最後のハッカソン,dark_historys&lang=ja`
     "
     class="twitter-share-button"
     data-show-count="false"
@@ -15,7 +17,14 @@
 <script>
 export default {
   props: {
-    OGPUrl: String
+    OGPUrl: {
+      type: String,
+      default: ""
+    },
+    title: {
+      type: String,
+      default: ""
+    }
   },
   data() {
     return {

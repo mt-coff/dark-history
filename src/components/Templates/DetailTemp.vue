@@ -3,7 +3,7 @@
     <loading-image :url="url" size="98px" />
     <container class="under-container">
       <link-button to="/list" class="back-btn">一覧に戻る</link-button>
-      <tweet-button :OGPUrl="OGPUrl"></tweet-button>
+      <tweet-button :OGPUrl="OGPUrl" :title="title"></tweet-button>
       <div class="dummy"></div>
     </container>
   </container>
@@ -23,6 +23,10 @@ export default {
       default: "https://bulma.io/images/placeholders/256x256.png"
     },
     OGPUrl: {
+      type: String,
+      default: ""
+    },
+    title: {
       type: String,
       default: ""
     }
