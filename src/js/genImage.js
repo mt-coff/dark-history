@@ -27,6 +27,10 @@ const genSvg = (tmp, title, description) => {
     .attr("style", "word-break: break-all; white-space: pre-line;")
     .append("xhtml:div")
     .append("p")
+    .attr(
+      "style",
+      "display:flex; justify-content: center; align-items: center; height: 300px;"
+    )
     .html(description);
 
   return tmp;
