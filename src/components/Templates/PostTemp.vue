@@ -1,6 +1,8 @@
 <template>
   <container class="container">
-    <heading :level="1" style="text-align: center">黒歴史を打ち明ける</heading>
+    <heading :level="1" style="text-align: center"
+      >†黒歴史を打ち明ける†</heading
+    >
     <container :space="16">
       <InputForm label="タイトル" @input="e => $emit('update:title', e)" />
     </container>
