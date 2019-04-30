@@ -19,7 +19,7 @@
       </link-button>
     </container>
     <container class="show" style="--delay-time: 800ms" :space="24">
-      <graph :points="items" info="黒歴史たち" />
+      <graph :points="items" :label="label" info="黒歴史たち" />
     </container>
   </container>
 </template>
@@ -38,6 +38,16 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  data() {
+    return {
+      label: {
+        top: "痛い",
+        bottom: "弱い",
+        left: "DQN",
+        right: "中二病"
+      }
+    };
   }
 };
 </script>
